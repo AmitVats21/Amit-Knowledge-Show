@@ -3,38 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>Amit Knowledge Show - Current Affairs & News</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <header>
-        <h1>Welcome to My Website</h1>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="logo">
+                <h1>Amit Knowledge Show</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="home-tab">Home</a></li>
+                <li><a href="#" id="about-tab">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Home Section</h2>
-        <p>This is the home section of the website.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Amit Knowledge Show</h1>
+            <p>Stay Updated with the Latest News & Current Affairs</p>
+            <a href="https://www.youtube.com/@amitknowledgeshow" class="cta-button" target="_blank">Subscribe on YouTube</a>
+        </div>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Here is some information about the website.</p>
+    <!-- Home Section (Slide-in Effect) -->
+    <section id="home-section" class="slide-section">
+        <button class="close-btn" id="close-home">X</button>
+        <div class="home-description">
+            <h2>Welcome to Amit Knowledge Show</h2>
+            <p>Our website and YouTube channel are dedicated to bringing you the latest updates, breaking news, and in-depth analysis on current affairs from around the world. We cover a wide range of topics, including:</p>
+            <ul>
+                <li>Breaking News</li>
+                <li>Political Developments</li>
+                <li>Geopolitics</li>
+                <li>Social & Economic Issues</li>
+                <li>Expert Commentary & Analysis</li>
+            </ul>
+            <p>By subscribing to our YouTube channel, you will get access to exclusive videos on breaking news, special reports, and in-depth analyses on crucial matters. Stay informed with Amit Knowledge Show!</p>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you want to contact us, email at example@domain.com</p>
+    <!-- About Section (Slide-in Effect) -->
+    <section id="about-section" class="slide-section">
+        <button class="close-btn" id="close-about">X</button>
+        <div class="about-description">
+            <h2>About Amit Knowledge Show</h2>
+            <p>Welcome to Amit Knowledge Show, your one-stop destination for understanding critical issues in news and current affairs. Our YouTube channel covers a variety of topics, including:</p>
+            <ul>
+                <li>Breaking News</li>
+                <li>Political Developments</li>
+                <li>Geopolitics</li>
+                <li>Social & Economic Issues</li>
+                <li>Expert Commentary & Analysis</li>
+            </ul>
+            <p>We provide in-depth coverage of geopolitics, helping you understand how global political movements and events affect the world. Subscribe to stay informed and gain insights into matters that truly matter.</p>
+        </div>
     </section>
 
+    <!-- Featured Video Section -->
+    <section class="featured-video">
+        <div class="video-container">
+            <h2>Featured Video: Understanding Current Affairs</h2>
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/YSFNimjRIVs?si=TW-nkWve-TIqa7yv" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 My First Website</p>
+        <div class="footer-container">
+            <p>© 2025 Amit Knowledge Show | Stay Informed, Stay Ahead</p>
+            <a href="https://www.youtube.com/@amitknowledgeshow" target="_blank">Visit our YouTube Channel</a>
+        </div>
     </footer>
+
+    <script>
+        // Open Home section when Home tab is clicked
+        document.getElementById('home-tab').addEventListener('click', function() {
+            const homeSection = document.getElementById('home-section');
+            const aboutSection = document.getElementById('about-section');
+            homeSection.classList.add('show-slide');
+            aboutSection.classList.remove('show-slide'); // Close About section if Home is clicked
+        });
+
+        // Open About section when About tab is clicked
+        document.getElementById('about-tab').addEventListener('click', function() {
+            const aboutSection = document.getElementById('about-section');
+            const homeSection = document.getElementById('home-section');
+            aboutSection.classList.add('show-slide');
+            homeSection.classList.remove('show-slide'); // Close Home section if About is clicked
+        });
+
+        // Close the Home section when X is clicked
+        document.getElementById('close-home').addEventListener('click', function() {
+            const homeSection = document.getElementById('home-section');
+            homeSection.classList.remove('show-slide');
+        });
+
+        // Close the About section when X is clicked
+        document.getElementById('close-about').addEventListener('click', function() {
+            const aboutSection = document.getElementById('about-section');
+            aboutSection.classList.remove('show-slide');
+        });
+
+        // Close both sections if clicked outside
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('#home-section') && !event.target.closest('#about-section') && !event.target.closest('.nav-links')) {
+                document.getElementById('home-section').classList.remove('show-slide');
+                document.getElementById('about-section').classList.remove('show-slide');
+            }
+        });
+    </script>
+
 </body>
 </html>
-<link rel="stylesheet" href="style.css">
+<div class="news-card">
+    <img src="c:\Users\Acer\Downloads\istockphoto-139257600-612x612.jpg" alt="Geopolitical Tensions">
+    <h3>Geopolitical Tensions: A Deep Dive</h3>
+    <p>Explore the latest developments in global politics and their impact on international relations.</p>
+    <a href="#">Read More</a>
+</div>
+<div class="news-card">
+    <img src="c:\Users\Acer\Downloads\istockphoto-139257600-612x612.jpg" alt="Economic Trends">
+    <h3>Economic Trends: What You Need to Know</h3>
+    <p>Stay updated on the latest economic trends and their implications for global markets.</p>
+    <a href="#">Read More</a>
+</div>
+<meta name="description" content="Amit Knowledge Show - Stay updated with the latest news, current affairs, and geopolitical analysis.">
+<meta name="keywords" content="news, current affairs, geopolitics, Amit Knowledge Show, YouTube">
+<meta name="author" content="Amit Knowledge Show">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit Knowledge Show - Current Affairs & News</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Your existing HTML code remains the same -->
+</body>
+</html>
